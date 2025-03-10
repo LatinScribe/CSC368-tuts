@@ -48,7 +48,7 @@ system.system_port = system.membus.cpu_side_ports
 system.mem_mode = 'timing'
 
 # CPU Setup
-system.cpu = X86MinorCPU()
+system.cpu = X86TimingSimpleCPU()
 
 ## This is needed when we use x86 CPUs
 system.cpu.createInterruptController()
@@ -64,6 +64,7 @@ system.cpu.l1d.cpu_side = system.cpu.dcache_port
 system.cpu.l1i = L1ICache()
 system.cpu.l1i.mem_side = system.membus.cpu_side_ports
 system.cpu.l1i.cpu_side = system.cpu.icache_port
+system.cpu.l1i.prefetcher = TaggedPrefetcher(degree=2)
 
 # Memory setup
 system.mem_ctrl = MemCtrl()
