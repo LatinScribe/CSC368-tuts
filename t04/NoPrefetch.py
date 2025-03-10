@@ -48,7 +48,7 @@ system.system_port = system.membus.cpu_side_ports
 system.mem_mode = 'timing'
 
 # CPU Setup
-system.cpu = X86MinorCPU()
+system.cpu = X86TimingSimpleCPU()
 
 ## This is needed when we use x86 CPUs
 system.cpu.createInterruptController()
