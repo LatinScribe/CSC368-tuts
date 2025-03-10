@@ -48,7 +48,7 @@ system.system_port = system.membus.cpu_side_ports
 system.mem_mode = 'timing'
 
 # CPU Setup
-system.cpu = X8603CPU()
+system.cpu = X86O3CPU()
 system.cpu.icache_port = system.membus.cpu_side_ports
 system.cpu.dcache_port = system.membus.cpu_side_ports
 
